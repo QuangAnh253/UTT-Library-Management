@@ -36,7 +36,7 @@ Các thành viên cần cập nhật và kiểm tra task hằng ngày.
 #### **1.1. Clone dự án lần đầu**
 
 ```bash
-git clone https://github.com/QuangAnh253/UTT-Library-Management
+git clone https://github.com/QuangAnh253/UTT-Library-Management.git
 ```
 
 Sau khi clone xong, chạy:
