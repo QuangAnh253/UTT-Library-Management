@@ -11,14 +11,16 @@ namespace UTT.Library.DTO
         public string MaNgonNgu { get; set; }
         public string TenNgonNgu { get; set; }
 
+        public string MoTa { get; set; }
         public DTO_NgonNgu()
         {
         }
 
-        public DTO_NgonNgu(string maNgonNgu, string tenNgonNgu)
+        public DTO_NgonNgu(string maNgonNgu, string tenNgonNgu, string moTa )
         {
             MaNgonNgu = maNgonNgu;
             TenNgonNgu = tenNgonNgu;
+            MoTa = moTa;
         }
     }
 }
