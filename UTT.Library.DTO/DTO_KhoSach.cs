@@ -8,17 +8,19 @@ namespace UTT.Library.DTO
 {
     public class DTO_KhoSach
     {
-        public string MaSach { get; set; }
-        public int SoLuongTon { get; set; }
-        public string MaViTri { get; set; }
+        public string MaKho { get; set; }     
+        public string TenKho { get; set; }    
+        public int SucChua { get; set; }      
+        public string MoTa { get; set; }
 
         public DTO_KhoSach() { }
 
-        public DTO_KhoSach(string maSach, int soLuongTon, string maViTri)
+        public DTO_KhoSach(string maKho, string tenKho, int sucChua, string moTa)
         {
-            MaSach = maSach;
-            SoLuongTon = soLuongTon;
-            MaViTri = maViTri;
+            MaKho = maKho;
+            TenKho = tenKho;
+            SucChua = sucChua;
+            MoTa = moTa;
         }
     }
 }

@@ -72,5 +72,15 @@ namespace UTT.Library.DAL.Database
                 return cmd.ExecuteScalar();
             }
         }
+
+        internal static DataTable ExecuteQuery(string query)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static int ExecuteNonQuery(string query, object[] parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
