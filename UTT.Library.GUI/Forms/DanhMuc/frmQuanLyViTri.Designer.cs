@@ -185,6 +185,7 @@
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Xuất Excel";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtMa
             // 
