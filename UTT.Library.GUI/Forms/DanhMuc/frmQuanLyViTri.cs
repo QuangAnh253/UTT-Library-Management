@@ -149,6 +149,21 @@ namespace UTT.Library.GUI.Forms.DanhMuc
             }
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExcelHelper.ExportToExcel(dgvDanhSach, "DanhSachViTriKe");
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message,
+                   "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void cboKho_SelectedIndexChanged(object sender, EventArgs e)
         {
 
