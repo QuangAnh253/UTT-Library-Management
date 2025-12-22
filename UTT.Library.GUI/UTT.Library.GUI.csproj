@@ -64,6 +64,24 @@
     <Compile Include="Forms\Common\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.Designer.cs">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
+      <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\ExcelHelper.cs" />
     <Compile Include="Utilities\Session.cs" />
     <Compile Include="Utilities\ValidationHelper.cs" />
@@ -72,12 +90,6 @@
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyKhoa.Designer.cs">
       <DependentUpon>frmQuanLyKhoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyLop.Designer.cs">
-      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNgonNgu.cs">
       <SubType>Form</SubType>
@@ -91,23 +103,11 @@
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
-      <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTheLoai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTheLoai.Designer.cs">
       <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
-      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmDashboard.cs">
       <SubType>Form</SubType>
@@ -245,8 +245,26 @@
     <EmbeddedResource Include="Forms\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyKhoa.resx">
+      <DependentUpon>frmQuanLyKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyLop.resx">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNgonNgu.resx">
+      <DependentUpon>frmQuanLyNgonNgu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.resx">
+      <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyTacGia.resx">
       <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyTheLoai.resx">
+      <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
