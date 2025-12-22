@@ -32,6 +32,8 @@ namespace UTT.Library.GUI.Forms.QuanLySach
             // Gọi qua lớp BLL để lấy dữ liệu
             dgvDanhSach.DataSource = bllKho.GetDanhSach();
         }
+
+        // Nút LÀM MỚI
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtMaKho.Clear();
@@ -46,7 +48,7 @@ namespace UTT.Library.GUI.Forms.QuanLySach
         private void btnThem_Click_1(object sender, EventArgs e)
         {
 
-            // Quy tắc 4: Validation - Kiểm tra trống
+            // Validation - Kiểm tra trống
             if (string.IsNullOrEmpty(txtMaKho.Text) || string.IsNullOrEmpty(txtTenKho.Text))
             {
                 MessageBox.Show("Mã kho và Tên kho không được để trống!", "Thông báo");
@@ -115,8 +117,33 @@ namespace UTT.Library.GUI.Forms.QuanLySach
                 }
             }
         }
-        
+
+
+
+        // --- XỬ LÝ SỰ KIỆN GRIDVIEW ---
+
+        // Xử lý khi nhấn vào bảng (CellClick)
+
+        private void dgvDanhSach_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDanhSach.Rows[e.RowIndex];
+
+                // Đổ dữ liệu từ dòng được chọn lên các TextBox
+                txtMaKho.Text = row.Cells[0].Value.ToString();
+                txtTenKho.Text = row.Cells[1].Value.ToString();
+                txtSucChua.Text = row.Cells[2].Value.ToString();
+                txtMoTa.Text = row.Cells[3].Value.ToString();
+
+                // Khóa mã kho lại để tránh sửa nhầm khóa chính
+                txtMaKho.Enabled = false;
+            }
+        }
        
+
+
         // NÚT TÌM KIẾM 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -177,6 +204,6 @@ namespace UTT.Library.GUI.Forms.QuanLySach
         }
         }
 
-       
+        
     }
 }
