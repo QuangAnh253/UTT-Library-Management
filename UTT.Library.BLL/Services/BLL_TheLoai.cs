@@ -1,5 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UTT.Library.DAL.Repositories;
+using UTT.Library.DTO;
+
+namespace UTT.Library.BLL.Services
+{
+    public class BLL_TheLoai
+    {
+        
+        private DAL_TheLoai _dal = new DAL_TheLoai();
+
+        public DataTable LayDanhSach()
+        {
+            return _dal.GetDanhSach();
+        }
+
+        public DataTable TimKiem(string keyword)
+        {
+            return _dal.TimKiem(keyword);
+        }
+
+        public string Them(DTO_TheLoai tg)
+        {
+            // Có thể thêm check trùng mã ở đây nếu cần
+            if (_dal.Them(tg)) return ""; // Rỗng là thành công
+            return "Không thể thêm thể loại" +
+                " (có thể trùng mã)!";
+        }
+
+        public string Sua(DTO_TheLoai tg)
+        {
+            if (_dal.Sua(tg)) return "";
+            return "Cập nhật thất bại!";
+        }
+
+        public string Xoa(string ma)
+        {
+            if (_dal.Xoa(ma)) return "";
+            return "Xóa thất bại (Dữ liệu đang được sử dụng)!";
+        }
+    }
+}
+
+    
+
+=======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,3 +66,10 @@ namespace UTT.Library.BLL.Services
     {
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
