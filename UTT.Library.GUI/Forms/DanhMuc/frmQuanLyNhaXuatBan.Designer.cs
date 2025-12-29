@@ -30,6 +30,7 @@
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -392,6 +393,8 @@
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -401,8 +404,12 @@
         #endregion
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 }
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+}
+>>>>>>> origin/main

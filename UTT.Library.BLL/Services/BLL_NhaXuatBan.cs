@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,8 @@ namespace UTT.Library.BLL.Services
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,8 +62,11 @@ namespace UTT.Library.BLL.Services
     internal class BLL_NhaXuatBan
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
     }
 }

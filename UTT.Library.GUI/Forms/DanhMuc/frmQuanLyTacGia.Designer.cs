@@ -31,6 +31,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panelRight = new System.Windows.Forms.Panel();
             this.btnExport = new System.Windows.Forms.Button();
 =======
@@ -39,6 +40,8 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.lblGhiChu = new System.Windows.Forms.Label();
@@ -51,6 +54,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblTen = new System.Windows.Forms.Label();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.lblMa = new System.Windows.Forms.Label();
@@ -60,6 +64,8 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -72,16 +78,20 @@
             this.panelRight = new System.Windows.Forms.Panel();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -125,11 +135,14 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             // dgvDanhSach
             // 
             this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -149,6 +162,8 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.dgvDanhSach.Location = new System.Drawing.Point(21, 343);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 51;
@@ -157,11 +172,14 @@
             this.dgvDanhSach.TabIndex = 5;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             // 
             // btnTimKiem
             // 
@@ -169,6 +187,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -329,6 +348,8 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.btnTimKiem.Location = new System.Drawing.Point(872, 179);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(157, 39);
@@ -337,15 +358,19 @@
             this.btnTimKiem.UseVisualStyleBackColor = false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             // 
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -372,6 +397,8 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.lblGhiChu.Location = new System.Drawing.Point(47, 405);
             this.lblGhiChu.Name = "lblGhiChu";
@@ -448,6 +475,7 @@
             this.txtTen.TabIndex = 4;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // 
             // lblTimKiem
@@ -495,6 +523,11 @@
             // lblTimKiem
             // 
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+            // 
+            // lblTimKiem
+            // 
+>>>>>>> origin/main
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.lblTimKiem.Location = new System.Drawing.Point(33, 186);
@@ -602,16 +635,20 @@
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
             // frmQuanLyTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 937);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -633,6 +670,11 @@
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelRight);
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.panelRight);
+>>>>>>> origin/main
             this.Name = "frmQuanLyTacGia";
             this.Text = "frmQuanLyTacGia";
             this.Load += new System.EventHandler(this.frmQuanLyTacGia_Load);

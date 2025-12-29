@@ -1,6 +1,7 @@
 ﻿using System;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Drawing;
 using System.Windows.Forms;
 using UTT.Library.BLL.Services;
@@ -9,6 +10,8 @@ using UTT.Library.GUI.Utilities;
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +21,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> origin/main
 
 namespace UTT.Library.GUI.Forms.DanhMuc
 {
     public partial class frmQuanLyTheLoai : Form
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         private BLL_TheLoai _bll = new BLL_TheLoai();
@@ -209,6 +216,11 @@ namespace UTT.Library.GUI.Forms.DanhMuc
         {
             InitializeComponent();
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+        public frmQuanLyTheLoai()
+        {
+            InitializeComponent();
+>>>>>>> origin/main
         }
     }
 }
