@@ -1,14 +1,26 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Drawing;
 using System.Windows.Forms;
 using UTT.Library.BLL.Services;
 using UTT.Library.DTO;
 using UTT.Library.GUI.Utilities;
+=======
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 
 namespace UTT.Library.GUI.Forms.DanhMuc
 {
     public partial class frmQuanLyTheLoai : Form
     {
+<<<<<<< HEAD
         private BLL_TheLoai _bll = new BLL_TheLoai();
 
         public frmQuanLyTheLoai()
@@ -180,6 +192,11 @@ namespace UTT.Library.GUI.Forms.DanhMuc
         {
             ExcelHelper.ExportToExcel(dgvDanhSach, "DanhSachTheLoai");
             MessageBox.Show("Xuất Excel thành công!");
+=======
+        public frmQuanLyTheLoai()
+        {
+            InitializeComponent();
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
         }
     }
 }

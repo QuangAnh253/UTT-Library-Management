@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.btnExport = new System.Windows.Forms.Button();
@@ -323,10 +324,15 @@
             this.SuspendLayout();
             // 
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+            this.SuspendLayout();
+            // 
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // frmQuanLyTheLoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1228, 490);
             this.Controls.Add(this.panelRight);
@@ -343,11 +349,17 @@
             this.Name = "frmQuanLyTheLoai";
             this.Text = "frmQuanLyTheLoai";
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmQuanLyTheLoai";
+            this.Text = "frmQuanLyTheLoai";
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.ResumeLayout(false);
 
         }
 
         #endregion
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Button btnExport;
@@ -366,5 +378,7 @@
         private System.Windows.Forms.Label lblTen;
         private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label lblMa;
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     }
 }

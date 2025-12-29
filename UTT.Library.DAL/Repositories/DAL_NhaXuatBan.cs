@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -77,5 +78,15 @@ namespace UTT.Library.DAL.Repositories
             return _db.GetDataTable(sql, param);
         }
 
+=======
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UTT.Library.DAL.Repositories
+{
+    internal class DAL_NhaXuatBan
+    {
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     }
 }

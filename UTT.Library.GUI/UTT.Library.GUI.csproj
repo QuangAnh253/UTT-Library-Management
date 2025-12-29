@@ -65,12 +65,15 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +91,9 @@
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
       <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     </Compile>
     <Compile Include="Utilities\ExcelHelper.cs" />
@@ -106,17 +112,23 @@
       <DependentUpon>frmQuanLyNgonNgu.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
       <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTheLoai.cs">
@@ -262,7 +274,10 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyKhoa.resx">
       <DependentUpon>frmQuanLyKhoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +287,9 @@
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNgonNgu.resx">
       <DependentUpon>frmQuanLyNgonNgu.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.resx">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
@@ -283,6 +301,12 @@
       <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
       <DependentUpon>frmQuanLyViTri.cs</DependentUpon>

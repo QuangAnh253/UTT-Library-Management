@@ -10,6 +10,7 @@ namespace UTT.Library.DTO
     {
         public string MaTheLoai { get; set; }
         public string TenTheLoai { get; set; }
+<<<<<<< HEAD
         public string MoTa {  get; set; }
 
         public DTO_TheLoai() { }
@@ -20,6 +21,15 @@ namespace UTT.Library.DTO
             TenTheLoai = tenTheLoai;
             MoTa = moTa;
             
+=======
+
+        public DTO_TheLoai() { }
+
+        public DTO_TheLoai(string maTheLoai, string tenTheLoai)
+        {
+            MaTheLoai = maTheLoai;
+            TenTheLoai = tenTheLoai;
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
         }
     }
 }

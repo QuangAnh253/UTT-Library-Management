@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -387,3 +388,14 @@
         private System.Windows.Forms.TextBox txtSdt;
     }
 }
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "frmQuanLyNhaXuatBan";
+        }
+
+        #endregion
+    }
+}
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57

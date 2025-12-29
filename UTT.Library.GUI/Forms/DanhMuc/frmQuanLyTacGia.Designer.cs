@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panelRight = new System.Windows.Forms.Panel();
             this.btnExport = new System.Windows.Forms.Button();
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
@@ -43,11 +46,14 @@
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblTen = new System.Windows.Forms.Label();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.lblMa = new System.Windows.Forms.Label();
             this.panelRight.SuspendLayout();
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -58,12 +64,16 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             // panelRight
             // 
@@ -101,11 +111,14 @@
             // 
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // dgvDanhSach
             // 
             this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.dgvDanhSach.Location = new System.Drawing.Point(21, 315);
             this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(4);
@@ -119,12 +132,17 @@
             this.dgvDanhSach.TabIndex = 12;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.dgvDanhSach.Location = new System.Drawing.Point(21, 343);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 51;
             this.dgvDanhSach.RowTemplate.Height = 24;
             this.dgvDanhSach.Size = new System.Drawing.Size(1001, 441);
             this.dgvDanhSach.TabIndex = 5;
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // 
             // btnTimKiem
@@ -133,6 +151,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.btnTimKiem.Location = new System.Drawing.Point(872, 146);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
@@ -287,17 +306,23 @@
             this.txtGhiChu.Size = new System.Drawing.Size(446, 32);
             this.txtGhiChu.TabIndex = 5;
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.btnTimKiem.Location = new System.Drawing.Point(872, 179);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(157, 39);
             this.btnTimKiem.TabIndex = 4;
             this.btnTimKiem.Text = "Tìm kiếm 🔍";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // 
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(40, 351);
@@ -318,6 +343,8 @@
             this.txtTen.Size = new System.Drawing.Size(446, 32);
             this.txtTen.TabIndex = 3;
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.lblGhiChu.Location = new System.Drawing.Point(47, 405);
             this.lblGhiChu.Name = "lblGhiChu";
@@ -392,6 +419,7 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(446, 32);
             this.txtTen.TabIndex = 4;
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // 
             // lblTimKiem
@@ -429,6 +457,11 @@
             this.lblMa.Text = "Mã tác giả:";
             // 
 =======
+=======
+            // 
+            // lblTimKiem
+            // 
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.lblTimKiem.Location = new System.Drawing.Point(33, 186);
@@ -534,6 +567,9 @@
             this.panelRight.Size = new System.Drawing.Size(1046, 937);
             this.panelRight.TabIndex = 9;
             // 
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // frmQuanLyTacGia
             // 
@@ -541,9 +577,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 937);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.panelRight);
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelLeft);
