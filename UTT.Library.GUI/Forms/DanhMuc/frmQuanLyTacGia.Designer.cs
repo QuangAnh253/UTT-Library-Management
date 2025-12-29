@@ -30,8 +30,11 @@
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panelRight = new System.Windows.Forms.Panel();
             this.btnExport = new System.Windows.Forms.Button();
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
@@ -47,11 +50,14 @@
             this.txtTen = new System.Windows.Forms.TextBox();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblTen = new System.Windows.Forms.Label();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.lblMa = new System.Windows.Forms.Label();
             this.panelRight.SuspendLayout();
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.lblTimKiem = new System.Windows.Forms.Label();
@@ -65,6 +71,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -73,6 +82,7 @@
             this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             // panelRight
@@ -113,11 +123,14 @@
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // dgvDanhSach
             // 
             this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.dgvDanhSach.Location = new System.Drawing.Point(21, 315);
@@ -134,6 +147,8 @@
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.dgvDanhSach.Location = new System.Drawing.Point(21, 343);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 51;
@@ -141,6 +156,9 @@
             this.dgvDanhSach.Size = new System.Drawing.Size(1001, 441);
             this.dgvDanhSach.TabIndex = 5;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -151,6 +169,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.btnTimKiem.Location = new System.Drawing.Point(872, 146);
@@ -308,6 +327,8 @@
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.btnTimKiem.Location = new System.Drawing.Point(872, 179);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(157, 39);
@@ -315,6 +336,9 @@
             this.btnTimKiem.Text = "Tìm kiếm 🔍";
             this.btnTimKiem.UseVisualStyleBackColor = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -322,6 +346,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,6 +368,8 @@
             this.txtTen.Size = new System.Drawing.Size(446, 32);
             this.txtTen.TabIndex = 3;
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -420,6 +447,7 @@
             this.txtTen.Size = new System.Drawing.Size(446, 32);
             this.txtTen.TabIndex = 4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
             // 
             // lblTimKiem
@@ -457,6 +485,11 @@
             this.lblMa.Text = "Mã tác giả:";
             // 
 =======
+=======
+            // 
+            // lblTimKiem
+            // 
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
             // 
             // lblTimKiem
@@ -568,6 +601,9 @@
             this.panelRight.TabIndex = 9;
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -578,9 +614,15 @@
             this.ClientSize = new System.Drawing.Size(1579, 937);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.panelRight);
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelLeft);

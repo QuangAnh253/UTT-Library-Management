@@ -66,12 +66,15 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
@@ -92,6 +95,9 @@
     <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
       <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -113,6 +119,7 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +128,17 @@
 =======
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -275,7 +287,10 @@
     </EmbeddedResource>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyKhoa.resx">
@@ -288,6 +303,9 @@
       <DependentUpon>frmQuanLyNgonNgu.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
@@ -302,6 +320,12 @@
     </EmbeddedResource>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
       <DependentUpon>frmQuanLyViTri.cs</DependentUpon>

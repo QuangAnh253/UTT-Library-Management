@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -59,6 +60,8 @@ namespace UTT.Library.DAL.Repositories
 }
  
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,4 +72,7 @@ namespace UTT.Library.DAL.Repositories
     {
     }
 }
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57

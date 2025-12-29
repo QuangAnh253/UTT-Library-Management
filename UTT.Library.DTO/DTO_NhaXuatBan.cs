@@ -8,6 +8,7 @@ namespace UTT.Library.DTO
 {
     public class DTO_NhaXuatBan
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     {
         public string MaNXB { get; set; }
@@ -27,6 +28,8 @@ namespace UTT.Library.DTO
     }
 
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
     {
         public string MaNhaXuatBan { get; set; }
         public string TenNhaXuatBan { get; set; }
@@ -41,5 +44,8 @@ namespace UTT.Library.DTO
             TenNhaXuatBan = tenNhaXuatBan;
         }
     }
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 }

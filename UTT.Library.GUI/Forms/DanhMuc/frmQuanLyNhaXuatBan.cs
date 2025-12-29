@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using UTT.Library.BLL.Services;
 using UTT.Library.DTO;
 using UTT.Library.GUI.Utilities;
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 =======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 
@@ -18,6 +21,7 @@ namespace UTT.Library.GUI.Forms.DanhMuc
 {
     public partial class frmQuanLyNhaXuatBan : Form
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         private BLL_NhaXuatBan _bll = new BLL_NhaXuatBan();
         public frmQuanLyNhaXuatBan()
@@ -221,10 +225,15 @@ namespace UTT.Library.GUI.Forms.DanhMuc
 }
         
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
         public frmQuanLyNhaXuatBan()
         {
             InitializeComponent();
         }
     }
 }
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57

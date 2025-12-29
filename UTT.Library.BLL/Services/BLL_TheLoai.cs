@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,8 @@ namespace UTT.Library.BLL.Services
     
 
 =======
+=======
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,4 +63,7 @@ namespace UTT.Library.BLL.Services
     {
     }
 }
+<<<<<<< HEAD
+>>>>>>> 19738ad26204ded7890aafbeda36010057251c57
+=======
 >>>>>>> 19738ad26204ded7890aafbeda36010057251c57
