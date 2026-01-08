@@ -64,24 +64,6 @@
     <Compile Include="Forms\Common\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyLop.Designer.cs">
-      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
-      <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
-      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\ExcelHelper.cs" />
     <Compile Include="Utilities\Session.cs" />
     <Compile Include="Utilities\ValidationHelper.cs" />
@@ -90,6 +72,12 @@
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyKhoa.Designer.cs">
       <DependentUpon>frmQuanLyKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.Designer.cs">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyNgonNgu.cs">
       <SubType>Form</SubType>
@@ -103,11 +91,23 @@
     <Compile Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.Designer.cs">
       <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
+      <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTheLoai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DanhMuc\frmQuanLyTheLoai.Designer.cs">
       <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmDashboard.cs">
       <SubType>Form</SubType>
@@ -230,6 +230,10 @@
       <Project>{add73722-dfd5-4334-a902-b3cc0fd4514c}</Project>
       <Name>UTT.Library.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UTT.Library.DAL\UTT.Library.DAL.csproj">
+      <Project>{23fb461f-70c6-4ca7-9300-e84b0d64ecab}</Project>
+      <Name>UTT.Library.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UTT.Library.DTO\UTT.Library.DTO.csproj">
       <Project>{e593052d-6b95-483d-8197-dd866cb2445a}</Project>
       <Name>UTT.Library.DTO</Name>
@@ -245,29 +249,26 @@
     <EmbeddedResource Include="Forms\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyKhoa.resx">
-      <DependentUpon>frmQuanLyKhoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyLop.resx">
-      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNgonNgu.resx">
-      <DependentUpon>frmQuanLyNgonNgu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyNhaXuatBan.resx">
-      <DependentUpon>frmQuanLyNhaXuatBan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyTacGia.resx">
       <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyTheLoai.resx">
-      <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DanhMuc\frmQuanLyViTri.resx">
-      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNguoi\frmLichSuMuonTra.resx">
+      <DependentUpon>frmLichSuMuonTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNguoi\frmQuanLyDocGia.resx">
+      <DependentUpon>frmQuanLyDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNguoi\frmQuanLyNhanVien.resx">
+      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNguoi\frmQuanLyTheTV.resx">
+      <DependentUpon>frmQuanLyTheTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNguoi\frmQuanLyViPham.resx">
+      <DependentUpon>frmQuanLyViPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

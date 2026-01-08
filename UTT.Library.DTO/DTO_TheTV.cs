@@ -9,19 +9,17 @@ namespace UTT.Library.DTO
     public class DTO_TheTV
     {
         public string MaThe { get; set; }
-        public string MaDocGia { get; set; }
+        public string MaSV { get; set; }
         public DateTime NgayCap { get; set; }
-        public DateTime NgayHetHan { get; set; }
-        public bool TrangThai { get; set; }
-
+        public DateTime NgayHetHan {  get; set; }
+        public string TrangThai { get; set; }
         public DTO_TheTV()
         {
         }
-
-        public DTO_TheTV(string maThe, string maDocGia, DateTime ngayCap, DateTime ngayHetHan, bool trangThai)
+        public DTO_TheTV(string maThe, string maSV, DateTime ngayCap, DateTime ngayHetHan, string trangThai)
         {
             MaThe = maThe;
-            MaDocGia = maDocGia;
+            MaSV = maSV;
             NgayCap = ngayCap;
             NgayHetHan = ngayHetHan;
             TrangThai = trangThai;
