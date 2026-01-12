@@ -8,27 +8,32 @@ namespace UTT.Library.DTO
 {
     public class DTO_DocGia
     {
-        public string MaDocGia { get; set; }
+        public string MaSV { get; set; }
         public string HoTen { get; set; }
+        public DateTime? NgaySinh { get; set; }
         public string GioiTinh { get; set; }
-        public DateTime NgaySinh { get; set; }
-        public string MaLop { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
+        public string MaLop { get; set; }
+        public string MaKhoa { get; set; }
+        public string TenDangNhap { get; set; }
 
         public DTO_DocGia()
         {
         }
 
-        public DTO_DocGia(string maDocGia, string hoTen, string gioiTinh, DateTime ngaySinh, string maLop, string sdt, string email)
+        public DTO_DocGia(string maSV, string hoTen, DateTime ngaySinh,string gioiTinh,string sdt,string email, string maLop, string maKhoa, string tenDangNhap)
         {
-            MaDocGia = maDocGia;
+            MaSV = maSV;
             HoTen = hoTen;
-            GioiTinh = gioiTinh;
             NgaySinh = ngaySinh;
-            MaLop = maLop;
-            SDT = sdt;
+            GioiTinh = gioiTinh;
             Email = email;
+            SDT = sdt;
+            MaLop = maLop;
+            MaKhoa = maKhoa;
+            TenDangNhap = tenDangNhap;
         }
     }
 }
+

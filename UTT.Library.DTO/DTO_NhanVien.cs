@@ -12,7 +12,7 @@ namespace UTT.Library.DTO
         public string HoTen { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
-        public DateTime NgayVaoLam { get; set; }
+        public DateTime? NgayVaoLam { get; set; }
         public string TenDangNhap { get; set; } // Khóa ngoại liên kết TAIKHOAN
 
         public DTO_NhanVien() { }

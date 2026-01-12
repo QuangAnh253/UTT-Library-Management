@@ -14,27 +14,87 @@ namespace UTT.Library.DAL.Repositories
     {
         private DatabaseHelper _db = new DatabaseHelper();
 
-        // Lấy thông tin nhân viên theo Tên đăng nhập
-        public DTO_NhanVien GetByUsername(string username)
+        // ================== LẤY DANH SÁCH ==================
+        public DataTable GetDanhSach()
         {
-            string sql = "SELECT * FROM NHANVIEN WHERE TenDangNhap = @user";
-            SqlParameter[] param = new SqlParameter[] { new SqlParameter("@user", username) };
+            return _db.GetDataTable("SELECT * FROM NHANVIEN");
+        }
 
-            DataTable dt = _db.GetDataTable(sql, param);
-            if (dt.Rows.Count > 0)
+        // ================== THÊM ==================
+        public bool Them(DTO_NhanVien nv)
+        {
+            string sql = @"
+                INSERT INTO NHANVIEN
+                (MaNV, HoTen, SDT, Email, NgayVaoLam, TenDangNhap)
+                VALUES
+                (@MaNV, @HoTen, @SDT, @Email, @NgayVaoLam, @TenDN)";
+
+            SqlParameter[] param =
             {
-                DataRow dr = dt.Rows[0];
-                return new DTO_NhanVien()
-                {
-                    MaNV = dr["MaNV"].ToString(),
-                    HoTen = dr["HoTen"].ToString(),
-                    Email = dr["Email"].ToString(),
-                    SDT = dr["SDT"].ToString(),
-                    NgayVaoLam = Convert.ToDateTime(dr["NgayVaoLam"]),
-                    TenDangNhap = dr["TenDangNhap"].ToString()
-                };
-            }
-            return null;
+                new SqlParameter("@MaNV", nv.MaNV),
+                new SqlParameter("@HoTen", nv.HoTen),
+                new SqlParameter("@SDT", nv.SDT ?? (object)DBNull.Value),
+                new SqlParameter("@Email", nv.Email ?? (object)DBNull.Value),
+                new SqlParameter("@NgayVaoLam", nv.NgayVaoLam ?? (object)DBNull.Value),
+                new SqlParameter("@TenDN", nv.TenDangNhap ?? (object)DBNull.Value)
+            };
+
+            return _db.ExecuteNonQuery(sql, param) > 0;
+        }
+
+        // ================== SỬA ==================
+        public bool Sua(DTO_NhanVien nv)
+        {
+            string sql = @"
+                UPDATE NHANVIEN
+                SET HoTen = @HoTen,
+                    SDT = @SDT,
+                    Email = @Email,
+                    NgayVaoLam = @NgayVaoLam,
+                    TenDangNhap = @TenDN
+                WHERE MaNV = @MaNV";
+
+            SqlParameter[] param =
+            {
+                new SqlParameter("@MaNV", nv.MaNV),
+                new SqlParameter("@HoTen", nv.HoTen),
+                new SqlParameter("@SDT", nv.SDT ?? (object)DBNull.Value),
+                new SqlParameter("@Email", nv.Email ?? (object)DBNull.Value),
+                new SqlParameter("@NgayVaoLam", nv.NgayVaoLam ?? (object)DBNull.Value),
+                new SqlParameter("@TenDN", nv.TenDangNhap ?? (object)DBNull.Value)
+            };
+
+            return _db.ExecuteNonQuery(sql, param) > 0;
+        }
+
+        // ================== XOÁ ==================
+        public bool Xoa(string maNV)
+        {
+            string sql = "DELETE FROM NHANVIEN WHERE MaNV = @MaNV";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@MaNV", maNV)
+            };
+
+            return _db.ExecuteNonQuery(sql, param) > 0;
+        }
+
+        // ================== TÌM KIẾM ==================
+        public DataTable TimKiem(string keyword)
+        {
+            string sql = @"
+                SELECT * FROM NHANVIEN
+                WHERE MaNV LIKE @Key
+                   OR HoTen LIKE @Key
+                   OR SDT LIKE @Key
+                   OR Email LIKE @Key";
+
+            SqlParameter[] param =
+            {
+                new SqlParameter("@Key", "%" + keyword + "%")
+            };
+
+            return _db.GetDataTable(sql, param);
         }
     }
 }
