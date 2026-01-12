@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +41,8 @@
             this.mnuNgonNgu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViTri = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLopKhoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLop = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuKhoa = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQLSach = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSach = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhapSach = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,17 +64,15 @@
             this.mnuDashboard = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblTaiKhoan = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblDeTai = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHocPhan = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblSpace = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblThoiGian = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.mnuLop = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuKhoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer();
             this.logo = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -194,6 +193,20 @@
             this.mnuLopKhoa.Name = "mnuLopKhoa";
             this.mnuLopKhoa.Size = new System.Drawing.Size(172, 26);
             this.mnuLopKhoa.Text = "Lớp và khoa";
+            // 
+            // mnuLop
+            // 
+            this.mnuLop.Name = "mnuLop";
+            this.mnuLop.Size = new System.Drawing.Size(173, 26);
+            this.mnuLop.Text = "Quản lý Lớp";
+            this.mnuLop.Click += new System.EventHandler(this.mnuLop_Click);
+            // 
+            // mnuKhoa
+            // 
+            this.mnuKhoa.Name = "mnuKhoa";
+            this.mnuKhoa.Size = new System.Drawing.Size(173, 26);
+            this.mnuKhoa.Text = "Quản lý Khoa";
+            this.mnuKhoa.Click += new System.EventHandler(this.mnuKhoa_Click);
             // 
             // mnuQLSach
             // 
@@ -371,12 +384,26 @@
             this.lblTaiKhoan.Text = "Sẵn sàng";
             this.lblTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(173, 21);
+            this.toolStripStatusLabel2.Spring = true;
+            this.toolStripStatusLabel2.Text = "                                       ";
+            // 
             // lblDeTai
             // 
             this.lblDeTai.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.lblDeTai.Name = "lblDeTai";
             this.lblDeTai.Size = new System.Drawing.Size(167, 21);
             this.lblDeTai.Text = "📚 Đề tài: QL Thư viện UTT";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(173, 21);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "                                       ";
             // 
             // lblHocPhan
             // 
@@ -417,34 +444,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // mnuLop
-            // 
-            this.mnuLop.Name = "mnuLop";
-            this.mnuLop.Size = new System.Drawing.Size(173, 26);
-            this.mnuLop.Text = "Quản lý Lớp";
-            this.mnuLop.Click += new System.EventHandler(this.mnuLop_Click);
-            // 
-            // mnuKhoa
-            // 
-            this.mnuKhoa.Name = "mnuKhoa";
-            this.mnuKhoa.Size = new System.Drawing.Size(173, 26);
-            this.mnuKhoa.Text = "Quản lý Khoa";
-            this.mnuKhoa.Click += new System.EventHandler(this.mnuKhoa_Click);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(173, 21);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "                                       ";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(173, 21);
-            this.toolStripStatusLabel2.Spring = true;
-            this.toolStripStatusLabel2.Text = "                                       ";
             // 
             // logo
             // 

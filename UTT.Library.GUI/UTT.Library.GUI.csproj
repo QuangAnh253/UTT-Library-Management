@@ -230,6 +230,10 @@
       <Project>{add73722-dfd5-4334-a902-b3cc0fd4514c}</Project>
       <Name>UTT.Library.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UTT.Library.DAL\UTT.Library.DAL.csproj">
+      <Project>{23fb461f-70c6-4ca7-9300-e84b0d64ecab}</Project>
+      <Name>UTT.Library.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UTT.Library.DTO\UTT.Library.DTO.csproj">
       <Project>{e593052d-6b95-483d-8197-dd866cb2445a}</Project>
       <Name>UTT.Library.DTO</Name>
@@ -250,6 +254,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyMuonSach.resx">
+      <DependentUpon>frmQuanLyMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyNhaCungCap.resx">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyNhapSach.resx">
+      <DependentUpon>frmQuanLyNhapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyTraSach.resx">
+      <DependentUpon>frmQuanLyTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

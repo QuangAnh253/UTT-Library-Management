@@ -1,11 +1,6 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using UTT.Library.DAL.Repositories;
 using UTT.Library.DTO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UTT.Library.BLL.Services
 {
