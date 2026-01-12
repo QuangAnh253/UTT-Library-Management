@@ -10,16 +10,16 @@ namespace UTT.Library.DTO
     {
         public string MaLop { get; set; }
         public string TenLop { get; set; }
+        public string KhoaHoc { get; set; }
         public string MaKhoa { get; set; }
 
-        public DTO_Lop()
-        {
-        }
+        public DTO_Lop() { }
 
-        public DTO_Lop(string maLop, string tenLop, string maKhoa)
+        public DTO_Lop(string maLop, string tenLop, string khoaHoc, string maKhoa)
         {
             MaLop = maLop;
             TenLop = tenLop;
+            KhoaHoc = khoaHoc;
             MaKhoa = maKhoa;
         }
     }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UTT.Library.BLL.Services;
 using UTT.Library.DTO;
@@ -53,21 +48,24 @@ namespace UTT.Library.GUI.Forms.DanhMuc
             if (!ValidationHelper.IsRequired(txtTen, "Tên tác giả")) return;
 
             DTO_TacGia tg = new DTO_TacGia(txtMa.Text, txtTen.Text, txtGhiChu.Text);
-
             string ketQua = _bll.Them(tg);
+
             if (string.IsNullOrEmpty(ketQua))
             {
-                MessageBox.Show("Thêm mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm mới thành công!", "Thông báo");
                 LoadData();
             }
-            else MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (txtMa.Enabled)
             {
-                MessageBox.Show("Vui lòng chọn dòng cần sửa!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn dòng cần sửa!");
                 return;
             }
 
@@ -81,14 +79,17 @@ namespace UTT.Library.GUI.Forms.DanhMuc
                 MessageBox.Show("Cập nhật thành công!");
                 LoadData();
             }
-            else MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (txtMa.Enabled || string.IsNullOrEmpty(txtMa.Text))
             {
-                MessageBox.Show("Vui lòng chọn dòng cần xóa!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
                 return;
             }
 
@@ -100,7 +101,10 @@ namespace UTT.Library.GUI.Forms.DanhMuc
                     MessageBox.Show("Xóa thành công!");
                     LoadData();
                 }
-                else MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show(ketQua, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -124,7 +128,6 @@ namespace UTT.Library.GUI.Forms.DanhMuc
                 txtMa.Text = row.Cells["MaTacGia"].Value.ToString();
                 txtTen.Text = row.Cells["TenTacGia"].Value.ToString();
                 txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
-
                 txtMa.Enabled = false;
             }
         }
@@ -135,12 +138,16 @@ namespace UTT.Library.GUI.Forms.DanhMuc
             try
             {
                 ExcelHelper.ExportToExcel(dgvDanhSach, "DanhSachTacGia");
-                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xuất Excel thành công!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
             }
+        }
+
+        private void panelLeft_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

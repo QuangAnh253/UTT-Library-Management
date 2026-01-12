@@ -11,14 +11,17 @@ namespace UTT.Library.DTO
         public string MaKhoa { get; set; }
         public string TenKhoa { get; set; }
 
+        public string MoTa { get; set; }
+
         public DTO_Khoa()
         {
         }
 
-        public DTO_Khoa(string maKhoa, string tenKhoa)
+        public DTO_Khoa(string maKhoa, string tenKhoa, string moTa)
         {
             MaKhoa = maKhoa;
             TenKhoa = tenKhoa;
+            MoTa = moTa;
         }
     }
 }
