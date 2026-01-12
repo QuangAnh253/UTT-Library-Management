@@ -3,143 +3,86 @@ using System.Data;
 using System.Globalization;
 using System.Windows.Forms;
 using UTT.Library.BLL.Services;
+using UTT.Library.DAL.Database;
 using UTT.Library.GUI.Utilities;
 
 namespace UTT.Library.GUI.Forms.NghiepVu
 {
     public partial class frmQuanLyTraSach : Form
     {
-        private readonly BLL_PhieuMuon _bll = new BLL_PhieuMuon();
+        private BLL_PhieuMuon _bll = new BLL_PhieuMuon();
+        private DatabaseHelper _db = new DatabaseHelper();
 
         public frmQuanLyTraSach()
         {
             InitializeComponent();
         }
 
-        private void frmQuanLyTraSach_Load(object sender, EventArgs e)
+        private void frmQuanLyTraSach_Load_1(object sender, EventArgs e)
         {
-            dgvChiTiet.AutoGenerateColumns = false;
-            dgvChiTiet.ReadOnly = true;
-            dgvChiTiet.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvChiTiet.MultiSelect = false;
-
-            ResetTraInput();
+            LoadData();
         }
 
-        private void btnTaiChiTiet_Click(object sender, EventArgs e)
+        private void LoadData()
         {
-            if (ValidationHelper.IsRequired(txtMaPhieuMuon, "Mã phiếu mượn") == false)
-                return;
+            string sql = @"SELECT CT.ID, CT.MaPhieuMuon, CT.MaSach, S.TenSach, PM.MaThe, PM.NgayMuon, PM.HanTra, CT.NgayTra, CT.TienPhat, CT.TinhTrangKhiTra, CT.GhiChu
+                        FROM CT_PHIEUMUON CT
+                        INNER JOIN PHIEUMUON PM ON CT.MaPhieuMuon = PM.MaPhieuMuon
+                        INNER JOIN SACH S ON CT.MaSach = S.MaSach
+                        WHERE CT.NgayTra IS NULL
+                        ORDER BY PM.HanTra ASC";
 
-            string maPhieuMuon = txtMaPhieuMuon.Text.Trim();
-
-            DataTable dt = _bll.LayChiTiet(maPhieuMuon);
-            dgvChiTiet.DataSource = dt;
-
-            ResetTraInput();
-
-            if (dt != null && dt.Rows.Count > 0 && dgvChiTiet.Rows.Count > 0)
-            {
-                dgvChiTiet.Rows[0].Selected = true;
-                FillTraInputFromCurrentRow();
-            }
+            dgvDanhSach.DataSource = _db.GetDataTable(sql);
+            ResetInput();
         }
 
-        private void dgvChiTiet_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ResetInput()
         {
-            FillTraInputFromCurrentRow();
-        }
-
-        private void dgvChiTiet_SelectionChanged(object sender, EventArgs e)
-        {
-            FillTraInputFromCurrentRow();
-        }
-
-        private void FillTraInputFromCurrentRow()
-        {
-            if (dgvChiTiet.CurrentRow == null)
-                return;
-
-            DataRowView drv = dgvChiTiet.CurrentRow.DataBoundItem as DataRowView;
-            if (drv == null)
-                return;
-
-            if (drv.Row.Table.Columns.Contains("ID") == false)
-                return;
-
-            object idObj = drv["ID"];
-            if (idObj == null || idObj == DBNull.Value)
-                return;
-
-            txtID.Text = idObj.ToString();
-
-            if (drv.Row.Table.Columns.Contains("NgayTra"))
-            {
-                object ngayTraObj = drv["NgayTra"];
-                if (ngayTraObj == null || ngayTraObj == DBNull.Value)
-                    dtpNgayTra.Value = DateTime.Now;
-                else
-                    dtpNgayTra.Value = Convert.ToDateTime(ngayTraObj);
-            }
-
-            if (drv.Row.Table.Columns.Contains("TienPhat"))
-            {
-                object tienPhatObj = drv["TienPhat"];
-                txtTienPhat.Text = (tienPhatObj == null || tienPhatObj == DBNull.Value) ? "0" : tienPhatObj.ToString();
-            }
-
-            if (drv.Row.Table.Columns.Contains("TinhTrangKhiTra"))
-            {
-                object ttObj = drv["TinhTrangKhiTra"];
-                txtTinhTrangKhiTra.Text = (ttObj == null || ttObj == DBNull.Value) ? "" : ttObj.ToString();
-            }
-
-            if (drv.Row.Table.Columns.Contains("GhiChu"))
-            {
-                object gcObj = drv["GhiChu"];
-                txtGhiChu.Text = (gcObj == null || gcObj == DBNull.Value) ? "" : gcObj.ToString();
-            }
+            txtID.Clear();
+            txtMaPhieuMuon.Clear();
+            txtMaSach.Clear();
+            txtTienPhat.Text = "0";
+            txtTinhTrangKhiTra.Clear();
+            txtGhiChu.Clear();
+            dtpNgayTra.Value = DateTime.Now;
+            txtID.Focus();
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            if (ValidationHelper.IsRequired(txtMaPhieuMuon, "Mã phiếu mượn") == false)
-                return;
-
-            if (ValidationHelper.IsRequired(txtID, "ID chi tiết") == false)
-                return;
+            if (!ValidationHelper.IsRequired(txtID, "ID chi tiết")) return;
 
             int id;
-            if (int.TryParse(txtID.Text.Trim(), out id) == false || id <= 0)
+            if (!int.TryParse(txtID.Text.Trim(), out id) || id <= 0)
             {
-                MessageBox.Show("ID không hợp lệ. Vui lòng ấn chọn lại 1 dòng");
+                MessageBox.Show("ID không hợp lệ!");
+                txtID.Focus();
                 return;
             }
 
-            decimal tienPhat;
-            string tienPhatText = (txtTienPhat.Text ?? "").Trim();
-            if (string.IsNullOrEmpty(tienPhatText))
-                tienPhatText = "0";
-
-            bool parseOk =
-                decimal.TryParse(tienPhatText, NumberStyles.Number, CultureInfo.CurrentCulture, out tienPhat) ||
-                decimal.TryParse(tienPhatText, NumberStyles.Number, CultureInfo.InvariantCulture, out tienPhat);
-
-            if (parseOk == false || tienPhat < 0)
+            decimal tienPhat = 0;
+            if (!string.IsNullOrWhiteSpace(txtTienPhat.Text))
             {
-                MessageBox.Show("Tiền phạt không hợp lệ. Vui lòng nhập xố nguyên");
-                return;
+                if (!decimal.TryParse(txtTienPhat.Text.Trim(), out tienPhat) || tienPhat < 0)
+                {
+                    MessageBox.Show("Tiền phạt phải là số >= 0!");
+                    txtTienPhat.Focus();
+                    return;
+                }
             }
 
-            string tinhTrang = txtTinhTrangKhiTra.Text.Trim();
-            string ghiChu = txtGhiChu.Text.Trim();
-
-            string ketQua = _bll.TraSach(id, dtpNgayTra.Value, tienPhat, tinhTrang, ghiChu);
+            string ketQua = _bll.TraSach(
+                id,
+                dtpNgayTra.Value,
+                tienPhat,
+                txtTinhTrangKhiTra.Text.Trim(),
+                txtGhiChu.Text.Trim()
+            );
 
             if (string.IsNullOrEmpty(ketQua))
             {
-                MessageBox.Show("Trả sách thành công");
-                TaiLaiChiTiet();
+                MessageBox.Show("Trả sách thành công.");
+                LoadData();
             }
             else
             {
@@ -147,25 +90,62 @@ namespace UTT.Library.GUI.Forms.NghiepVu
             }
         }
 
-        private void TaiLaiChiTiet()
+        private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            string maPhieuMuon = txtMaPhieuMuon.Text.Trim();
-            if (string.IsNullOrWhiteSpace(maPhieuMuon))
-                return;
-
-            DataTable dt = _bll.LayChiTiet(maPhieuMuon);
-            dgvChiTiet.DataSource = dt;
-
-            ResetTraInput();
+            LoadData();
         }
 
-        private void ResetTraInput()
+        private void btnExport_Click(object sender, EventArgs e)
         {
-            txtID.Clear();
-            txtTienPhat.Text = "0";
-            txtTinhTrangKhiTra.Clear();
-            txtGhiChu.Clear();
-            dtpNgayTra.Value = DateTime.Now;
+            try
+            {
+                ExcelHelper.ExportToExcel(dgvDanhSach, "DanhSachTraSach");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(key))
+            {
+                LoadData();
+                return;
+            }
+
+            string sql = @"SELECT CT.ID,  CT.MaPhieuMuon, CT.MaSach, S.TenSach, PM.MaThe, PM.NgayMuon, PM.HanTra, CT.NgayTra,  CT.TienPhat, CT.TinhTrangKhiTra,  CT.GhiChu
+                        FROM CT_PHIEUMUON CT
+                        INNER JOIN PHIEUMUON PM ON CT.MaPhieuMuon = PM.MaPhieuMuon
+                        INNER JOIN SACH S ON CT.MaSach = S.MaSach
+                        WHERE CT.NgayTra IS NULL 
+                        AND (CT.MaPhieuMuon LIKE @Key OR CAST(CT.MaSach AS VARCHAR) LIKE @Key OR PM.MaThe LIKE @Key)
+                        ORDER BY PM.HanTra ASC";
+
+            System.Data.SqlClient.SqlParameter[] param = {
+                new System.Data.SqlClient.SqlParameter("@Key", "%" + key + "%")
+            };
+            dgvDanhSach.DataSource = _db.GetDataTable(sql, param);
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDanhSach.Rows[e.RowIndex];
+
+                txtID.Text = row.Cells["ID"].Value.ToString();
+                txtMaPhieuMuon.Text = row.Cells["MaPhieuMuon"].Value.ToString();
+                txtMaSach.Text = row.Cells["MaSach"].Value.ToString();
+
+                dtpNgayTra.Value = DateTime.Now;
+
+                txtTienPhat.Text = row.Cells["TienPhat"].Value?.ToString() ?? "0";
+                txtTinhTrangKhiTra.Text = row.Cells["TinhTrangKhiTra"].Value?.ToString() ?? "";
+                txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString() ?? "";
+            }
         }
     }
 }

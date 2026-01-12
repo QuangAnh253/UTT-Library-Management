@@ -150,7 +150,7 @@ namespace UTT.Library.GUI.Forms.NghiepVu
             dgvDanhSach.DataSource = _bll.TimKiem(key);
         }
 
-        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

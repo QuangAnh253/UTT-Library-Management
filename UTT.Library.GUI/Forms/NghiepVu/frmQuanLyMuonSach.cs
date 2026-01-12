@@ -21,53 +21,49 @@ namespace UTT.Library.GUI.Forms.NghiepVu
 
         private void frmQuanLyMuonSach_Load(object sender, EventArgs e)
         {
-            dtpNgayMuon.Value = DateTime.Now;
-            dtpHanTra.Value = DateTime.Now.AddDays(30);
-
-            dgvChiTiet.ReadOnly = false;
-            dgvChiTiet.AllowUserToAddRows = false;
-
-            LoadComboThe();
-            LoadComboNhanVien();
-
-            if (dgvChiTiet.Rows.Count == 0)
-                dgvChiTiet.Rows.Add();
+            LoadData();
+            LoadComboBoxes();
         }
 
-        private void LoadComboThe()
+        private void LoadData()
         {
-            DataTable dt = _db.GetDataTable("SELECT MaThe FROM THETHUVIEN");
-            cboThe.DataSource = dt;
+            dgvDanhSach.DataSource = _bll.LayDanhSach();
+            ResetInput();
+        }
+
+        private void LoadComboBoxes()
+        {
+            DataTable dtThe = _db.GetDataTable("SELECT MaThe FROM THETHUVIEN WHERE TrangThai = N'Hoạt động'");
+            cboThe.DataSource = dtThe;
             cboThe.DisplayMember = "MaThe";
             cboThe.ValueMember = "MaThe";
             cboThe.SelectedIndex = -1;
-        }
 
-        private void LoadComboNhanVien()
-        {
-            DataTable dt = _db.GetDataTable("SELECT MaNV, HoTen FROM NHANVIEN");
-            cboNhanVien.DataSource = dt;
+            DataTable dtNV = _db.GetDataTable("SELECT MaNV, HoTen FROM NHANVIEN");
+            cboNhanVien.DataSource = dtNV;
             cboNhanVien.DisplayMember = "HoTen";
             cboNhanVien.ValueMember = "MaNV";
             cboNhanVien.SelectedIndex = -1;
         }
 
-        private void btnThemDong_Click(object sender, EventArgs e)
+        private void ResetInput()
         {
-            dgvChiTiet.Rows.Add();
+            txtMaPhieuMuon.Clear();
+            txtMaSach.Clear();
+            txtGhiChu.Clear();
+            dtpNgayMuon.Value = DateTime.Now;
+            dtpHanTra.Value = DateTime.Now.AddDays(30);
+            cboThe.SelectedIndex = -1;
+            cboNhanVien.SelectedIndex = -1;
+            if (cboTrangThai.Items.Count > 0)
+                cboTrangThai.SelectedIndex = 0;
+            txtMaPhieuMuon.Focus();
         }
 
-        private void btnXoaDong_Click(object sender, EventArgs e)
-        {
-            if (dgvChiTiet.CurrentRow == null) return;
-            if (dgvChiTiet.CurrentRow.IsNewRow) return;
-
-            dgvChiTiet.Rows.RemoveAt(dgvChiTiet.CurrentRow.Index);
-        }
-
-        private void btnLapPhieu_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             if (!ValidationHelper.IsRequired(txtMaPhieuMuon, "Mã phiếu mượn")) return;
+            if (!ValidationHelper.IsRequired(txtMaSach, "Mã sách")) return;
 
             if (cboThe.SelectedValue == null)
             {
@@ -90,6 +86,32 @@ namespace UTT.Library.GUI.Forms.NghiepVu
                 return;
             }
 
+            List<int> dsMaSach = new List<int>();
+            string[] arrMaSach = txtMaSach.Text.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string ms in arrMaSach)
+            {
+                int maSach;
+                if (int.TryParse(ms.Trim(), out maSach) && maSach > 0)
+                {
+                    if (!dsMaSach.Contains(maSach))
+                        dsMaSach.Add(maSach);
+                }
+                else
+                {
+                    MessageBox.Show("Mã sách phải là số nguyên dương! Lỗi tại: " + ms);
+                    txtMaSach.Focus();
+                    return;
+                }
+            }
+
+            if (dsMaSach.Count == 0)
+            {
+                MessageBox.Show("Vui lòng nhập ít nhất 1 mã sách!");
+                txtMaSach.Focus();
+                return;
+            }
+
             DTO_PhieuMuon pm = new DTO_PhieuMuon
             {
                 MaPhieuMuon = txtMaPhieuMuon.Text.Trim(),
@@ -97,42 +119,16 @@ namespace UTT.Library.GUI.Forms.NghiepVu
                 MaNV = cboNhanVien.SelectedValue.ToString(),
                 NgayMuon = dtpNgayMuon.Value,
                 HanTra = dtpHanTra.Value,
-                TrangThai = "Đang mượn",
+                TrangThai = cboTrangThai.SelectedItem.ToString(),
                 GhiChu = txtGhiChu.Text.Trim()
             };
-
-            List<int> dsMaSach = new List<int>();
-
-            foreach (DataGridViewRow row in dgvChiTiet.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                string maSachText = row.Cells["colMaSach"].Value == null ? "" : row.Cells["colMaSach"].Value.ToString().Trim();
-                if (string.IsNullOrWhiteSpace(maSachText)) continue;
-
-                int maSach;
-                if (!int.TryParse(maSachText, out maSach) || maSach <= 0)
-                {
-                    MessageBox.Show("Mã sách phải là số > 0!");
-                    return;
-                }
-
-                if (!dsMaSach.Contains(maSach))
-                    dsMaSach.Add(maSach);
-            }
-
-            if (dsMaSach.Count == 0)
-            {
-                MessageBox.Show("Vui lòng nhập ít nhất 1 mã sách để mượn!");
-                return;
-            }
 
             string ketQua = _bll.LapPhieuMuon(pm, dsMaSach);
 
             if (string.IsNullOrEmpty(ketQua))
             {
-                MessageBox.Show("Đã tạo phiếu mượn!");
-                ResetForm();
+                MessageBox.Show("Thêm phiếu mượn thành công.");
+                LoadData();
             }
             else
             {
@@ -142,24 +138,54 @@ namespace UTT.Library.GUI.Forms.NghiepVu
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            ResetForm();
+            LoadData();
         }
 
-        private void ResetForm()
+        private void btnExport_Click(object sender, EventArgs e)
         {
-            txtMaPhieuMuon.Clear();
-            txtGhiChu.Clear();
+            try
+            {
+                ExcelHelper.ExportToExcel(dgvDanhSach, "DanhSachPhieuMuon");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
+            }
+        }
 
-            dtpNgayMuon.Value = DateTime.Now;
-            dtpHanTra.Value = DateTime.Now.AddDays(30);
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(key))
+            {
+                LoadData();
+                return;
+            }
 
-            cboThe.SelectedIndex = -1;
-            cboNhanVien.SelectedIndex = -1;
+            dgvDanhSach.DataSource = _bll.TimKiem(key);
+        }
 
-            dgvChiTiet.Rows.Clear();
-            dgvChiTiet.Rows.Add();
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDanhSach.Rows[e.RowIndex];
+                txtMaPhieuMuon.Text = row.Cells["MaPhieuMuon"].Value.ToString();
 
-            txtMaPhieuMuon.Focus();
+                if (row.Cells["MaThe"].Value != DBNull.Value)
+                    cboThe.SelectedValue = row.Cells["MaThe"].Value.ToString();
+
+                if (row.Cells["MaNV"].Value != DBNull.Value)
+                    cboNhanVien.SelectedValue = row.Cells["MaNV"].Value.ToString();
+
+                dtpNgayMuon.Value = Convert.ToDateTime(row.Cells["NgayMuon"].Value);
+                dtpHanTra.Value = Convert.ToDateTime(row.Cells["HanTra"].Value);
+                cboTrangThai.SelectedItem = row.Cells["TrangThai"].Value.ToString();
+                txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString() ?? "";
+
+                if (row.Cells["MaSach"].Value != DBNull.Value)
+                    txtMaSach.Text = row.Cells["MaSach"].Value.ToString();
+            }
         }
     }
 }

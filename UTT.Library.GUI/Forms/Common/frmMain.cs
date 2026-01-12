@@ -380,5 +380,10 @@ namespace UTT.Library.GUI.Forms.Common
         {
             OpenChildForm(new frmQuanLyKhoa());
         }
+
+        private void mnuDeXuat_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmQuanLyDeXuatMuaSach());
+        }
     }
 }
