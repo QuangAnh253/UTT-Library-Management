@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UTT.Library.DTO
 {
@@ -14,9 +10,7 @@ namespace UTT.Library.DTO
         public bool TrangThai { get; set; }
         public DateTime NgayTao { get; set; }
 
-        public DTO_TaiKhoan()
-        {
-        }
+        public DTO_TaiKhoan() { }
 
         public DTO_TaiKhoan(string tenDangNhap, string matKhau, int quyen, bool trangThai, DateTime ngayTao)
         {

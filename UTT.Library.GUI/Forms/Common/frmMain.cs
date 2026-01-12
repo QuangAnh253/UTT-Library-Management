@@ -116,13 +116,11 @@ namespace UTT.Library.GUI.Forms.Common
                 string role = Session.CurrentAccount.Quyen == 1 ? "Admin" : (Session.CurrentAccount.Quyen == 2 ? "Thủ thư" : "Sinh viên");
                 lblTaiKhoan.Text = $"👤 Cán bộ: {Session.CurrentAccount.TenDangNhap} | Quyền: {role}";
 
-                // --- CHÈN HÀM PHÂN QUYỀN VÀO ĐÂY ---
                 PhanQuyen();
             }
             else
             {
                 lblTaiKhoan.Text = "👤 Chưa đăng nhập (Chế độ Test)";
-                // Nếu muốn test giao diện phân quyền mà không cần login, có thể gọi tạm ở đây (nhưng nhớ fake Session trước)
             }
 
             // Khởi động đồng hồ & Set text tĩnh
@@ -141,55 +139,75 @@ namespace UTT.Library.GUI.Forms.Common
         }
         private void PhanQuyen()
         {
-            // Lấy quyền từ Session
             int quyen = Session.CurrentAccount.Quyen;
-            // 1: Admin, 2: Thủ thư, 3: Sinh viên
 
-            // --- CASE 1: ADMIN (QUYỀN 1) ---
+            // --- BƯỚC 1: RESET TRẠNG THÁI (Rất quan trọng) ---
+            // Mặc định bật hết lên trước, sau đó ai quyền thấp thì tắt bớt đi.
+            // Để tránh việc ông Admin đăng nhập sau ông Sinh viên bị mất nút.
+            mnuHeThong.Visible = true;
+            mnuQuanLyTaiKhoan.Visible = true;
+            mnuDanhMuc.Visible = true;
+
+            mnuQLSach.Visible = true;      // Menu Cha Sách
+            mnuSach.Visible = true;        // Menu con Hồ sơ sách
+            mnuNhapSach.Visible = true;
+            mnuKho.Visible = true;
+            mnuThanhLy.Visible = true;
+            mnuNCC.Visible = true;
+            mnuTraCuu.Visible = true;      // Cái này SV cần
+
+            mnuQLNhanSu.Visible = true;    // Menu Cha Nhân sự
+            mnuMuonSach.Visible = true;
+            mnuTraSach.Visible = true;
+            mnuDatTruoc.Visible = true;
+
+            // --- BƯỚC 2: BẮT ĐẦU CẮT GIẢM THEO QUYỀN ---
+
+            // CASE 1: ADMIN (Quyền 1)
             if (quyen == 1)
             {
-                // Admin thấy hết -> Không cần ẩn gì cả
-                return;
+                return; // Admin thấy hết (do đã Reset ở trên), thoát hàm luôn.
             }
 
-            // --- CASE 2: THỦ THƯ (QUYỀN 2) ---
+            // CASE 2: THỦ THƯ (Quyền 2)
             if (quyen == 2)
             {
-                // Ẩn chức năng quản trị hệ thống cao cấp
-                mnuQuanLyTaiKhoan.Visible = false; // Thủ thư không được cấp nick cho người khác
-
-                // Các chức năng nghiệp vụ khác vẫn dùng bình thường
+                mnuQuanLyTaiKhoan.Visible = false; // Chỉ ẩn quản lý User
+                                                   // Các cái khác giữ nguyên true như mặc định
             }
 
-            // --- CASE 3: SINH VIÊN (QUYỀN 3) ---
+            // CASE 3: SINH VIÊN (Quyền 3)
             if (quyen == 3)
             {
-                // Ẩn sạch các menu quản lý, chỉ để lại tra cứu
-                mnuHeThong.Visible = true; // Để đổi pass/đăng xuất
+                // 1. Hệ thống
                 mnuQuanLyTaiKhoan.Visible = false;
 
-                mnuDanhMuc.Visible = false;   // Không sửa danh mục
-                mnuQLSach.Visible = false;    // Ẩn menu cha Sách
+                // 2. Danh mục (Ẩn cả cha lẫn con vì SV không dùng gì ở đây)
+                mnuDanhMuc.Visible = false;
 
-                // Mở lại menu con Tra Cứu (Hack: Vì ẩn cha thì con cũng mất, nên ta phải xử lý khéo)
-                // Cách tốt nhất: Tạo một Menu riêng cho Sinh viên hoặc chỉ ẩn các nút con
+                // 3. Quản lý Sách (Lưu ý kỹ chỗ này)
+                // KHÔNG ĐƯỢC ẨN MENU CHA (mnuQLSach), vì cần giữ nút Tra Cứu
+                mnuQLSach.Visible = true;
 
-                // Ẩn từng nút con trong menu Sách
-                mnuSach.Visible = false;
-                mnuNhapSach.Visible = false;
-                mnuKho.Visible = false;
-                mnuThanhLy.Visible = false;
-                mnuNCC.Visible = false;
-                // mnuTraCuu.Visible = true; // Giữ lại cái này
+                // Chỉ ẩn các nút con nghiệp vụ
+                mnuSach.Visible = false;      // Hồ sơ sách
+                mnuNhapSach.Visible = false;  // Nhập sách
+                mnuKho.Visible = false;       // Kho
+                mnuThanhLy.Visible = false;   // Thanh lý
+                mnuNCC.Visible = false;       // Nhà cung cấp
 
+                // mnuTraCuu.Visible = true;  // Mặc định đã true ở trên rồi, không cần gõ lại
+
+                // 4. Nhân sự (Ẩn hết cả cha vì SV xem thông tin bản thân ở chỗ khác)
+                // Nếu bạn muốn SV xem Lịch sử mượn trả nằm trong menu này thì phải mở Cha, ẩn Con tương tự như trên.
+                // Giả sử ở đây ta ẩn hết cho gọn:
                 mnuQLNhanSu.Visible = false;
 
-                // Ẩn nghiệp vụ Mượn/Trả (SV không tự làm được)
+                // 5. Nghiệp vụ (Mượn/Trả/Đặt)
+                // Giả sử 3 nút này nằm chung menu cha "NghiepVu"
                 mnuMuonSach.Visible = false;
                 mnuTraSach.Visible = false;
-
-                // Hiện Đặt trước
-                mnuDatTruoc.Visible = true;
+                mnuDatTruoc.Visible = true; // SV được đặt trước
             }
         }
 
@@ -361,6 +379,11 @@ namespace UTT.Library.GUI.Forms.Common
         private void mnuKhoa_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmQuanLyKhoa());
+        }
+
+        private void mnuDeXuat_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmQuanLyDeXuatMuaSach());
         }
     }
 }

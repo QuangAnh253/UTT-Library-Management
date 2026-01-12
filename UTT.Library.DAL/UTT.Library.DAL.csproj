@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DAL_CTPhieuMuon.cs" />
     <Compile Include="Repositories\DAL_CTPhieuNhap.cs" />
+    <Compile Include="Repositories\DAL_DeXuatMuaSach.cs" />
     <Compile Include="Repositories\DAL_DocGia.cs" />
     <Compile Include="Repositories\DAL_Khoa.cs" />
     <Compile Include="Repositories\DAL_KhoSach.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Repositories\DAL_TaiKhoan.cs" />
     <Compile Include="Repositories\DAL_TheLoai.cs" />
     <Compile Include="Repositories\DAL_TheTV.cs" />
+    <Compile Include="Repositories\DAL_ThongKe.cs" />
     <Compile Include="Repositories\DAL_ViPham.cs" />
     <Compile Include="Repositories\DAL_ViTri.cs" />
   </ItemGroup>

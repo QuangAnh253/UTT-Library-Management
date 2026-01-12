@@ -52,6 +52,7 @@
     <Compile Include="Forms\Common\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Common\frmDashboard.cs" />
     <Compile Include="Forms\Common\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,30 @@
     </Compile>
     <Compile Include="Forms\Common\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyLop.Designer.cs">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyTacGia.Designer.cs">
+      <DependentUpon>frmQuanLyTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMuc\frmQuanLyViTri.Designer.cs">
+      <DependentUpon>frmQuanLyViTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NghiepVu\frmQuanLyDeXuatMuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NghiepVu\frmQuanLyDeXuatMuaSach.Designer.cs">
+      <DependentUpon>frmQuanLyDeXuatMuaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExcelHelper.cs" />
     <Compile Include="Utilities\Session.cs" />
@@ -246,6 +271,9 @@
     <EmbeddedResource Include="Forms\Common\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +297,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuanLyNguoi\frmQuanLyViPham.resx">
       <DependentUpon>frmQuanLyViPham.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HeThong\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmQuanLyTaiKhoan.resx">
+      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyDatTruoc.resx">
+      <DependentUpon>frmQuanLyDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyDeXuatMuaSach.resx">
+      <DependentUpon>frmQuanLyDeXuatMuaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyMuonSach.resx">
+      <DependentUpon>frmQuanLyMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyNhaCungCap.resx">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyNhapSach.resx">
+      <DependentUpon>frmQuanLyNhapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghiepVu\frmQuanLyTraSach.resx">
+      <DependentUpon>frmQuanLyTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
