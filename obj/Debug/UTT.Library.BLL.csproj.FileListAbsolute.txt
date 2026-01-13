@@ -1,0 +1,11 @@
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.BLL.dll
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.BLL.pdb
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.DAL.dll
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.DTO.dll
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.DAL.pdb
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\bin\Debug\UTT.Library.DTO.pdb
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\obj\Debug\UTT.Library.BLL.csproj.AssemblyReference.cache
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\obj\Debug\UTT.Library.BLL.csproj.CoreCompileInputs.cache
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\obj\Debug\UTT.Libr.DA6B43C7.Up2Date
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\obj\Debug\UTT.Library.BLL.dll
+C:\Users\HONG\OneDrive\Documents\BTLC#\UTT.Library.BLL\obj\Debug\UTT.Library.BLL.pdb
