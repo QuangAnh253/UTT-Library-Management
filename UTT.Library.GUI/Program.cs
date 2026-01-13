@@ -12,7 +12,7 @@ namespace UTT.Library.GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmDangNhap());
         }
     }
 }

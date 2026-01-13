@@ -49,5 +49,17 @@ namespace UTT.Library.BLL.Services
             if (_dal.Xoa(maSach)) return "";
             return "Xóa thất bại (sách đang được sử dụng)!";
         }
+
+        // ================= TRA CỨU NÂNG CAO =================
+
+        public DataTable TraCuuNangCao(string keyword, string maTheLoai, string maTacGia, string maNXB)
+        {
+            return _dal.TraCuuNangCao(keyword, maTheLoai, maTacGia, maNXB);
+        }
+
+        public DataTable LayTatCaSachChiTiet()
+        {
+            return _dal.LayTatCaSachChiTiet();
+        }
     }
 }

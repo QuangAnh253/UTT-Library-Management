@@ -32,7 +32,12 @@ namespace UTT.Library.GUI.Utilities
 
         public static bool ConfirmDelete()
         {
-            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa dòng này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return ConfirmDelete("Bạn có chắc chắn muốn xóa dòng này không?");
+        }
+
+        public static bool ConfirmDelete(string message)
+        {
+            var result = MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return result == DialogResult.Yes;
         }
     }

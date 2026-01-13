@@ -44,6 +44,7 @@
     <Compile Include="DTO_CTPhieuMuon.cs" />
     <Compile Include="DTO_CTPhieuNhap.cs" />
     <Compile Include="DTO_DocGia.cs" />
+    <Compile Include="DTO_Kho.cs" />
     <Compile Include="DTO_Khoa.cs" />
     <Compile Include="DTO_KhoSach.cs" />
     <Compile Include="DTO_Lop.cs" />
