@@ -21,11 +21,6 @@ namespace UTT.Library.BLL.Services
             return _dalChiTiet.GetByMaPhieuMuon(maPhieuMuon);
         }
 
-        public DataTable TimKiem(string keyword)
-        {
-            return _dalPhieuMuon.TimKiem(keyword);
-        }
-
         public string LapPhieuMuon(DTO_PhieuMuon pm, List<int> dsMaSach)
         {
             if (pm == null) return "Dữ liệu phiếu mượn không hợp lệ";
@@ -34,17 +29,11 @@ namespace UTT.Library.BLL.Services
             if (pm.HanTra < pm.NgayMuon) return "Hạn trả phải lớn hơn hoặc bằng ngày mượn";
             if (dsMaSach == null || dsMaSach.Count == 0) return "Vui lòng chọn ít nhất 1 sách để mượn";
 
-            // ✅ KIỂM TRA TRÙNG MÃ
-            if (_dalPhieuMuon.KiemTraTonTai(pm.MaPhieuMuon))
-            {
-                return "Mã phiếu mượn '" + pm.MaPhieuMuon + "' đã tồn tại! Vui lòng nhập mã khác.";
-            }
-
             if (string.IsNullOrWhiteSpace(pm.TrangThai))
                 pm.TrangThai = "Đang mượn";
 
             if (!_dalPhieuMuon.Them(pm))
-                return "Không thể lưu phiếu mượn";
+                return "Không thể lưu phiếu mượn ";
 
             foreach (int maSach in dsMaSach)
             {
@@ -57,8 +46,8 @@ namespace UTT.Library.BLL.Services
 
         public string TraSach(int id, DateTime ngayTra, decimal tienPhat, string tinhTrangKhiTra, string ghiChu)
         {
-            if (id <= 0) return "ID không hợp lệ";
-            if (tienPhat < 0) return "Tiền phạt không hợp lệ";
+            if (id <= 0) return "không hợp lệ";
+            if (tienPhat < 0) return "không hợp lệ";
 
             if (_dalChiTiet.CapNhatTra(id, ngayTra, tienPhat, tinhTrangKhiTra, ghiChu))
                 return "";

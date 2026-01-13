@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UTT.Library.DAL.Repositories
+namespace UTT.Library.BLL.Utilities
 {
-    internal class DAL_PhieuDatTruoc
+    internal class DateTimeHelper
     {
     }
 }

@@ -8,23 +8,21 @@ namespace UTT.Library.DTO
 {
     public class DTO_PhieuDatTruoc
     {
-        public int MaPhieuDat { get; set; }
-        public string MaSV { get; set; }
-        public int MaSach { get; set; }
+        public string MaPhieuDat { get; set; }
+        public string MaDocGia { get; set; }
+        public string MaSach { get; set; }
         public DateTime NgayDat { get; set; }
-        public string TrangThai { get; set; }
-        public DateTime NgayHetHan { get; set; }
+        public bool TrangThai { get; set; }
 
         public DTO_PhieuDatTruoc() { }
 
-        public DTO_PhieuDatTruoc(int maPhieuDat, string maSV, int maSach, DateTime ngayDat, string trangThai, DateTime ngayHetHan)
+        public DTO_PhieuDatTruoc(string maPhieuDat, string maDocGia, string maSach, DateTime ngayDat, bool trangThai)
         {
             MaPhieuDat = maPhieuDat;
-            MaSV = maSV;
+            MaDocGia = maDocGia;
             MaSach = maSach;
             NgayDat = ngayDat;
             TrangThai = trangThai;
-            NgayHetHan = ngayHetHan;
         }
     }
 }

@@ -261,6 +261,12 @@ namespace UTT.Library.GUI.Forms.QuanLySach
             }
         }
 
+        // Event handler cho CellContentClick (được gọi từ Designer)
+        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvDanhSach_CellClick(sender, e);
+        }
+
         // Xuất danh sách sách ra file Excel
         private void btnExport_Click(object sender, EventArgs e)
         {

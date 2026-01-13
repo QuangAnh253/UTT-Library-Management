@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="DTO_CTPhieuMuon.cs" />
     <Compile Include="DTO_CTPhieuNhap.cs" />
-    <Compile Include="DTO_DeXuatMuaSach.cs" />
     <Compile Include="DTO_DocGia.cs" />
     <Compile Include="DTO_Khoa.cs" />
     <Compile Include="DTO_KhoSach.cs" />
@@ -61,7 +60,6 @@
     <Compile Include="DTO_TaiKhoan.cs" />
     <Compile Include="DTO_TheLoai.cs" />
     <Compile Include="DTO_TheTV.cs" />
-    <Compile Include="DTO_ThongKe.cs" />
     <Compile Include="DTO_ViPham.cs" />
     <Compile Include="DTO_ViTri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

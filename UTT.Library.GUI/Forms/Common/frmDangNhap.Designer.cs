@@ -107,7 +107,7 @@
             this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblExit.Location = new System.Drawing.Point(122, 436);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(49, 16);
+            this.lblExit.Size = new System.Drawing.Size(47, 16);
             this.lblExit.TabIndex = 4;
             this.lblExit.Text = "Thoát";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -199,7 +199,6 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
-            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picTogglePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUser)).EndInit();

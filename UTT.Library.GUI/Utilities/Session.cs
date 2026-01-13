@@ -16,6 +16,12 @@ namespace UTT.Library.GUI.Utilities
         // Nếu là Admin hoặc Thủ thư thì biến này sẽ có dữ liệu
         public static DTO_NhanVien CurrentEmployee = null;
 
+        // Property để lấy Mã nhân viên hiện tại
+        public static string MaNV
+        {
+            get { return CurrentEmployee?.MaNV ?? ""; }
+        }
+
         // Hàm kiểm tra xem đã đăng nhập chưa
         public static bool IsLoggedIn()
         {

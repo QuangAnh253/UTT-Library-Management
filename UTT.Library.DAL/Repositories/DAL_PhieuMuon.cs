@@ -12,33 +12,8 @@ namespace UTT.Library.DAL.Repositories
 
         public DataTable GetDanhSach()
         {
-            string sql = @"SELECT PM.MaPhieuMuon, PM.MaThe, PM.MaNV, PM.NgayMuon, PM.HanTra, PM.TrangThai, PM.GhiChu, 
-                            STUFF((
-                                SELECT ', ' + CAST(CT.MaSach AS VARCHAR)
-                                FROM CT_PHIEUMUON CT
-                                WHERE CT.MaPhieuMuon = PM.MaPhieuMuon
-                                FOR XML PATH('')
-                            ), 1, 2, '') AS MaSach
-                        FROM PHIEUMUON PM
-                        ORDER BY PM.NgayMuon DESC";
+            string sql = "SELECT * FROM PHIEUMUON";
             return _db.GetDataTable(sql);
-        }
-
-        public bool KiemTraTonTai(string maPhieuMuon)
-        {
-            string sql = "SELECT COUNT(*) FROM PHIEUMUON WHERE MaPhieuMuon = @MaPhieuMuon";
-            SqlParameter[] param = 
-            {
-                new SqlParameter("@MaPhieuMuon", maPhieuMuon)
-            };
-            
-            DataTable dt = _db.GetDataTable(sql, param);
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                int count = Convert.ToInt32(dt.Rows[0][0]);
-                return count > 0;
-            }
-            return false;
         }
 
         public bool Them(DTO_PhieuMuon pm)
@@ -69,22 +44,6 @@ namespace UTT.Library.DAL.Repositories
                 new SqlParameter("@TrangThai", trangThai)
             };
             return _db.ExecuteNonQuery(sql, param) > 0;
-        }
-
-        public DataTable TimKiem(string keyword)
-        {
-            string sql = @"SELECT PM.MaPhieuMuon, PM.MaThe, PM.MaNV, PM.NgayMuon, PM.HanTra, PM.TrangThai, PM.GhiChu, 
-                            STUFF((
-                                SELECT ', ' + CAST(CT.MaSach AS VARCHAR)
-                                FROM CT_PHIEUMUON CT
-                                WHERE CT.MaPhieuMuon = PM.MaPhieuMuon
-                                FOR XML PATH('')
-                            ), 1, 2, '') AS MaSach
-                        FROM PHIEUMUON PM
-                        WHERE PM.MaPhieuMuon LIKE @Key OR PM.MaThe LIKE @Key OR PM.TrangThai LIKE @Key
-                        ORDER BY PM.NgayMuon DESC";
-            SqlParameter[] param = { new SqlParameter("@Key", "%" + keyword + "%") };
-            return _db.GetDataTable(sql, param);
         }
     }
 }

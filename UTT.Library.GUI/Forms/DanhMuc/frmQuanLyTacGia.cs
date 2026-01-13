@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 using UTT.Library.BLL.Services;
 using UTT.Library.DTO;
@@ -19,10 +17,7 @@ namespace UTT.Library.GUI.Forms.DanhMuc
 
         private void frmQuanLyTacGia_Load(object sender, EventArgs e)
         {
-            // Xóa hết các hàm Decorate, chỉ để lại LoadData
-            LoadData(); 
-            
-            // Nếu muốn đổi tên cột cho đẹp thì viết 1-2 dòng đơn giản ở đây thôi
+            LoadData();
             dgvDanhSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhSach.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
@@ -119,20 +114,18 @@ namespace UTT.Library.GUI.Forms.DanhMuc
             dgvDanhSach.DataSource = _bll.TimKiem(key);
         }
 
-        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Lưu ý: Nên dùng CellClick thay vì CellContentClick để click vào phần trắng của ô vẫn nhận
-             if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvDanhSach.Rows[e.RowIndex];
                 txtMa.Text = row.Cells["MaTacGia"].Value.ToString();
                 txtTen.Text = row.Cells["TenTacGia"].Value.ToString();
-                txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+                txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString() ?? "";
                 txtMa.Enabled = false;
             }
         }
-        
-        // Sự kiện Export giữ nguyên nếu trong đề cương có yêu cầu
+
         private void btnExport_Click(object sender, EventArgs e)
         {
             try
@@ -144,10 +137,6 @@ namespace UTT.Library.GUI.Forms.DanhMuc
             {
                 MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message);
             }
-        }
-
-        private void panelLeft_Paint(object sender, PaintEventArgs e)
-        {
         }
     }
 }

@@ -11,7 +11,6 @@ using UTT.Library.DTO;
 namespace UTT.Library.DAL.Repositories
 {
    public class DAL_SachThanhLy
-
     {
         private DatabaseHelper _db = new DatabaseHelper();
 
@@ -26,10 +25,12 @@ namespace UTT.Library.DAL.Repositories
                     stl.NgayXuLy, 
                     stl.NguoiXuLy, 
                     stl.SoLuongThanhLy,
-                    s.TacGia,
-                    s.NhaXuatBan
+                    tg.TenTacGia,
+                    nxb.TenNXB
                 FROM SACHTHANHLY stl
                 INNER JOIN SACH s ON stl.MaSach = s.MaSach
+                LEFT JOIN TACGIA tg ON s.MaTacGia = tg.MaTacGia
+                LEFT JOIN NHAXUATBAN nxb ON s.MaNXB = nxb.MaNXB
                 ORDER BY stl.NgayXuLy DESC";
 
             return _db.GetDataTable(sql);
@@ -59,8 +60,8 @@ namespace UTT.Library.DAL.Repositories
         public bool CapNhatSoLuongSach(int maSach, int soLuongThanhLy)
         {
             string sql = @"UPDATE SACH 
-                SET SoLuong = SoLuong - @SoLuongThanhLy
-                WHERE MaSach = @MaSach AND SoLuong >= @SoLuongThanhLy";
+                SET SoLuongTon = SoLuongTon - @SoLuongThanhLy
+                WHERE MaSach = @MaSach AND SoLuongTon >= @SoLuongThanhLy";
 
             SqlParameter[] param =
             {
@@ -85,7 +86,7 @@ namespace UTT.Library.DAL.Repositories
         // Lấy số lượng tồn kho
         public int GetSoLuongTon(int maSach)
         {
-            string sql = "SELECT SoLuong FROM SACH WHERE MaSach = @MaSach";
+            string sql = "SELECT SoLuongTon FROM SACH WHERE MaSach = @MaSach";
             SqlParameter[] param =
             {
                 new SqlParameter("@MaSach", maSach)
@@ -106,10 +107,12 @@ namespace UTT.Library.DAL.Repositories
                     stl.NgayXuLy, 
                     stl.NguoiXuLy, 
                     stl.SoLuongThanhLy,
-                    s.TacGia,
-                    s.NhaXuatBan
+                    tg.TenTacGia,
+                    nxb.TenNXB
                 FROM SACHTHANHLY stl
                 INNER JOIN SACH s ON stl.MaSach = s.MaSach
+                LEFT JOIN TACGIA tg ON s.MaTacGia = tg.MaTacGia
+                LEFT JOIN NHAXUATBAN nxb ON s.MaNXB = nxb.MaNXB
                 WHERE s.TenSach LIKE @Key OR stl.LyDo LIKE @Key
                 ORDER BY stl.NgayXuLy DESC";
 
